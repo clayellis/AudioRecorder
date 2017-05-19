@@ -15,6 +15,7 @@
 		6F71860B1ECF6AE7007A9CA8 /* AudioRecorder.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F71860A1ECF6AE7007A9CA8 /* AudioRecorder.plist */; };
 		6F71860D1ECF6AF0007A9CA8 /* AudioRecorderTests.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F71860C1ECF6AF0007A9CA8 /* AudioRecorderTests.plist */; };
 		6F71860E1ECF6B50007A9CA8 /* AudioRecorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7186081ECF6A9D007A9CA8 /* AudioRecorderTests.swift */; };
+		6F7186131ECF7721007A9CA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F7186121ECF7721007A9CA8 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		6F7186081ECF6A9D007A9CA8 /* AudioRecorderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioRecorderTests.swift; path = Tests/AudioRecorderTests/AudioRecorderTests.swift; sourceTree = SOURCE_ROOT; };
 		6F71860A1ECF6AE7007A9CA8 /* AudioRecorder.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AudioRecorder.plist; path = Configs/AudioRecorder.plist; sourceTree = "<group>"; };
 		6F71860C1ECF6AF0007A9CA8 /* AudioRecorderTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AudioRecorderTests.plist; path = Configs/AudioRecorderTests.plist; sourceTree = "<group>"; };
+		6F7186121ECF7721007A9CA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				6F7185FC1ECF6A43007A9CA8 /* Sources */,
+				6F7186141ECF772F007A9CA8 /* Assets */,
 				6F17C96C1ECF5BE300DA378C /* Tests */,
 				6F7185FD1ECF6A5C007A9CA8 /* Configs */,
 				6F17C9601ECF5BE300DA378C /* Products */,
@@ -120,6 +123,14 @@
 				6F71860C1ECF6AF0007A9CA8 /* AudioRecorderTests.plist */,
 			);
 			name = Tests;
+			sourceTree = "<group>";
+		};
+		6F7186141ECF772F007A9CA8 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				6F7186121ECF7721007A9CA8 /* Assets.xcassets */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F71860B1ECF6AE7007A9CA8 /* AudioRecorder.plist in Resources */,
+				6F7186131ECF7721007A9CA8 /* Assets.xcassets in Resources */,
 				6F71860D1ECF6AF0007A9CA8 /* AudioRecorderTests.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
