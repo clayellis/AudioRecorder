@@ -12,8 +12,6 @@
 		6F7186051ECF6A90007A9CA8 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7186011ECF6A90007A9CA8 /* AudioRecorder.swift */; };
 		6F7186061ECF6A90007A9CA8 /* TrackMerger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7186021ECF6A90007A9CA8 /* TrackMerger.swift */; };
 		6F7186071ECF6A90007A9CA8 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7186031ECF6A90007A9CA8 /* UIViewExtensions.swift */; };
-		6F71860B1ECF6AE7007A9CA8 /* AudioRecorder.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F71860A1ECF6AE7007A9CA8 /* AudioRecorder.plist */; };
-		6F71860D1ECF6AF0007A9CA8 /* AudioRecorderTests.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F71860C1ECF6AF0007A9CA8 /* AudioRecorderTests.plist */; };
 		6F71860E1ECF6B50007A9CA8 /* AudioRecorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7186081ECF6A9D007A9CA8 /* AudioRecorderTests.swift */; };
 		6F7186131ECF7721007A9CA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F7186121ECF7721007A9CA8 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -229,9 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F71860B1ECF6AE7007A9CA8 /* AudioRecorder.plist in Resources */,
 				6F7186131ECF7721007A9CA8 /* Assets.xcassets in Resources */,
-				6F71860D1ECF6AF0007A9CA8 /* AudioRecorderTests.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
