@@ -16,7 +16,7 @@ public protocol AudioRecorderControllerDelegate: class {
 
 open class AudioRecorderController: UIViewController {
     
-    weak var delegate: AudioRecorderControllerDelegate?
+    open weak var delegate: AudioRecorderControllerDelegate?
     
     fileprivate let _navigationController = UINavigationController()
     fileprivate let _controller = _AudioRecorderController()
