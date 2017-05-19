@@ -606,24 +606,42 @@ fileprivate class _AudioRecorderView: UIView {
         timestampLabel.font = timestampFont
         
         
-        recordButton.setImage(#imageLiteral(resourceName: "Record Button"), for: .normal)
-        recordButton.setImage(#imageLiteral(resourceName: "Record Button Highlighted"), for: .highlighted)
-        recordButton.setImage(#imageLiteral(resourceName: "Record Button Disabled"), for: .disabled)
-        recordButton.setImage(#imageLiteral(resourceName: "Stop Button"), for: .selected)
-        recordButton.setImage(#imageLiteral(resourceName: "Stop Button Highlighted"), for: [.selected, .highlighted])
-        recordButton.setImage(#imageLiteral(resourceName: "Stop Button Disabled"), for: [.selected, .disabled])
+        recordButton.setImage(UIImage(named: "Record Button"), for: .normal)
+        recordButton.setImage(UIImage(named: "Record Button Highlighted"), for: .highlighted)
+        recordButton.setImage(UIImage(named: "Record Button Disabled"), for: .disabled)
+        recordButton.setImage(UIImage(named: "Stop Button"), for: .selected)
+        recordButton.setImage(UIImage(named: "Stop Button Highlighted"), for: [.selected, .highlighted])
+        recordButton.setImage(UIImage(named: "Stop Button Disabled"), for: [.selected, .disabled])
         
-        playButton.setImage(#imageLiteral(resourceName: "Play Button"), for: .normal)
-        playButton.setImage(#imageLiteral(resourceName: "Play Button Highlighted"), for: .highlighted)
-        playButton.setImage(#imageLiteral(resourceName: "Play Button Disabled"), for: .disabled)
-        playButton.setImage(#imageLiteral(resourceName: "Pause Button"), for: .selected)
-        playButton.setImage(#imageLiteral(resourceName: "Pause Button Highlighted"), for: [.selected, .highlighted])
-        playButton.setImage(#imageLiteral(resourceName: "Pause Button Disabled"), for: [.selected, .disabled])
+        playButton.setImage(UIImage(named: "Play Button"), for: .normal)
+        playButton.setImage(UIImage(named: "Play Button Highlighted"), for: .highlighted)
+        playButton.setImage(UIImage(named: "Play Button Disabled"), for: .disabled)
+        playButton.setImage(UIImage(named: "Pause Button"), for: .selected)
+        playButton.setImage(UIImage(named: "Pause Button Highlighted"), for: [.selected, .highlighted])
+        playButton.setImage(UIImage(named: "Pause Button Disabled"), for: [.selected, .disabled])
         
-        portButton.setImage(#imageLiteral(resourceName: "Speaker"), for: .normal)
-        portButton.setImage(#imageLiteral(resourceName: "Speaker Highlighted"), for: .highlighted)
-        portButton.setImage(#imageLiteral(resourceName: "Speaker Selected"), for: .selected)
-        portButton.setImage(#imageLiteral(resourceName: "Speaker Selected Highlighted"), for: [.selected, .highlighted])
+        portButton.setImage(UIImage(named: "Speaker"), for: .normal)
+        portButton.setImage(UIImage(named: "Speaker Highlighted"), for: .highlighted)
+        portButton.setImage(UIImage(named: "Speaker Selected"), for: .selected)
+        portButton.setImage(UIImage(named: "Speaker Selected Highlighted"), for: [.selected, .highlighted])
+//        recordButton.setImage(#imageLiteral(resourceName: "Record Button"), for: .normal)
+//        recordButton.setImage(#imageLiteral(resourceName: "Record Button Highlighted"), for: .highlighted)
+//        recordButton.setImage(#imageLiteral(resourceName: "Record Button Disabled"), for: .disabled)
+//        recordButton.setImage(#imageLiteral(resourceName: "Stop Button"), for: .selected)
+//        recordButton.setImage(#imageLiteral(resourceName: "Stop Button Highlighted"), for: [.selected, .highlighted])
+//        recordButton.setImage(#imageLiteral(resourceName: "Stop Button Disabled"), for: [.selected, .disabled])
+//        
+//        playButton.setImage(#imageLiteral(resourceName: "Play Button"), for: .normal)
+//        playButton.setImage(#imageLiteral(resourceName: "Play Button Highlighted"), for: .highlighted)
+//        playButton.setImage(#imageLiteral(resourceName: "Play Button Disabled"), for: .disabled)
+//        playButton.setImage(#imageLiteral(resourceName: "Pause Button"), for: .selected)
+//        playButton.setImage(#imageLiteral(resourceName: "Pause Button Highlighted"), for: [.selected, .highlighted])
+//        playButton.setImage(#imageLiteral(resourceName: "Pause Button Disabled"), for: [.selected, .disabled])
+//        
+//        portButton.setImage(#imageLiteral(resourceName: "Speaker"), for: .normal)
+//        portButton.setImage(#imageLiteral(resourceName: "Speaker Highlighted"), for: .highlighted)
+//        portButton.setImage(#imageLiteral(resourceName: "Speaker Selected"), for: .selected)
+//        portButton.setImage(#imageLiteral(resourceName: "Speaker Selected Highlighted"), for: [.selected, .highlighted])
         portButton.contentHorizontalAlignment = .right
         
         verticalStack.axis = .vertical
