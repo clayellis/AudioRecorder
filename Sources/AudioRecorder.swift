@@ -605,25 +605,29 @@ fileprivate class _AudioRecorderView: UIView {
         let timestampFont = UIFont.monospacedDigitSystemFont(ofSize: 45, weight: UIFontWeightUltraLight)
         timestampLabel.font = timestampFont
         
+        func image(named name: String) -> UIImage? {
+            return UIImage(named: name, in: Bundle(for: AudioRecorderController.self), compatibleWith: nil)
+        }
         
-        recordButton.setImage(UIImage(named: "Record Button"), for: .normal)
-        recordButton.setImage(UIImage(named: "Record Button Highlighted"), for: .highlighted)
-        recordButton.setImage(UIImage(named: "Record Button Disabled"), for: .disabled)
-        recordButton.setImage(UIImage(named: "Stop Button"), for: .selected)
-        recordButton.setImage(UIImage(named: "Stop Button Highlighted"), for: [.selected, .highlighted])
-        recordButton.setImage(UIImage(named: "Stop Button Disabled"), for: [.selected, .disabled])
+        recordButton.setImage(image(named: "Record Button"), for: .normal)
+        recordButton.setImage(image(named: "Record Button Highlighted"), for: .highlighted)
+        recordButton.setImage(image(named: "Record Button Disabled"), for: .disabled)
+        recordButton.setImage(image(named: "Stop Button"), for: .selected)
+        recordButton.setImage(image(named: "Stop Button Highlighted"), for: [.selected, .highlighted])
+        recordButton.setImage(image(named: "Stop Button Disabled"), for: [.selected, .disabled])
         
-        playButton.setImage(UIImage(named: "Play Button"), for: .normal)
-        playButton.setImage(UIImage(named: "Play Button Highlighted"), for: .highlighted)
-        playButton.setImage(UIImage(named: "Play Button Disabled"), for: .disabled)
-        playButton.setImage(UIImage(named: "Pause Button"), for: .selected)
-        playButton.setImage(UIImage(named: "Pause Button Highlighted"), for: [.selected, .highlighted])
-        playButton.setImage(UIImage(named: "Pause Button Disabled"), for: [.selected, .disabled])
+        playButton.setImage(image(named: "Play Button"), for: .normal)
+        playButton.setImage(image(named: "Play Button Highlighted"), for: .highlighted)
+        playButton.setImage(image(named: "Play Button Disabled"), for: .disabled)
+        playButton.setImage(image(named: "Pause Button"), for: .selected)
+        playButton.setImage(image(named: "Pause Button Highlighted"), for: [.selected, .highlighted])
+        playButton.setImage(image(named: "Pause Button Disabled"), for: [.selected, .disabled])
         
-        portButton.setImage(UIImage(named: "Speaker"), for: .normal)
-        portButton.setImage(UIImage(named: "Speaker Highlighted"), for: .highlighted)
-        portButton.setImage(UIImage(named: "Speaker Selected"), for: .selected)
-        portButton.setImage(UIImage(named: "Speaker Selected Highlighted"), for: [.selected, .highlighted])
+        portButton.setImage(image(named: "Speaker"), for: .normal)
+        portButton.setImage(image(named: "Speaker Highlighted"), for: .highlighted)
+        portButton.setImage(image(named: "Speaker Selected"), for: .selected)
+        portButton.setImage(image(named: "Speaker Selected Highlighted"), for: [.selected, .highlighted])
+        
 //        recordButton.setImage(#imageLiteral(resourceName: "Record Button"), for: .normal)
 //        recordButton.setImage(#imageLiteral(resourceName: "Record Button Highlighted"), for: .highlighted)
 //        recordButton.setImage(#imageLiteral(resourceName: "Record Button Disabled"), for: .disabled)
