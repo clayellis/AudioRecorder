@@ -29,7 +29,7 @@ open class AudioRecorderController: UIViewController {
         return .fade
     }
     
-    init() {
+    public init() {
         super.init(nibName: nil, bundle: nil)
         modalPresentationCapturesStatusBarAppearance = true
     }
