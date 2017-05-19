@@ -38,10 +38,6 @@ open class AudioRecorderController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    deinit {
-        print("AudioRecorderController Deinit")
-    }
-    
     override open func viewDidLoad() {
         super.viewDidLoad()
         loadInternalViewHierarchy()
@@ -627,25 +623,6 @@ fileprivate class _AudioRecorderView: UIView {
         portButton.setImage(image(named: "Speaker Highlighted"), for: .highlighted)
         portButton.setImage(image(named: "Speaker Selected"), for: .selected)
         portButton.setImage(image(named: "Speaker Selected Highlighted"), for: [.selected, .highlighted])
-        
-//        recordButton.setImage(#imageLiteral(resourceName: "Record Button"), for: .normal)
-//        recordButton.setImage(#imageLiteral(resourceName: "Record Button Highlighted"), for: .highlighted)
-//        recordButton.setImage(#imageLiteral(resourceName: "Record Button Disabled"), for: .disabled)
-//        recordButton.setImage(#imageLiteral(resourceName: "Stop Button"), for: .selected)
-//        recordButton.setImage(#imageLiteral(resourceName: "Stop Button Highlighted"), for: [.selected, .highlighted])
-//        recordButton.setImage(#imageLiteral(resourceName: "Stop Button Disabled"), for: [.selected, .disabled])
-//        
-//        playButton.setImage(#imageLiteral(resourceName: "Play Button"), for: .normal)
-//        playButton.setImage(#imageLiteral(resourceName: "Play Button Highlighted"), for: .highlighted)
-//        playButton.setImage(#imageLiteral(resourceName: "Play Button Disabled"), for: .disabled)
-//        playButton.setImage(#imageLiteral(resourceName: "Pause Button"), for: .selected)
-//        playButton.setImage(#imageLiteral(resourceName: "Pause Button Highlighted"), for: [.selected, .highlighted])
-//        playButton.setImage(#imageLiteral(resourceName: "Pause Button Disabled"), for: [.selected, .disabled])
-//        
-//        portButton.setImage(#imageLiteral(resourceName: "Speaker"), for: .normal)
-//        portButton.setImage(#imageLiteral(resourceName: "Speaker Highlighted"), for: .highlighted)
-//        portButton.setImage(#imageLiteral(resourceName: "Speaker Selected"), for: .selected)
-//        portButton.setImage(#imageLiteral(resourceName: "Speaker Selected Highlighted"), for: [.selected, .highlighted])
         portButton.contentHorizontalAlignment = .right
         
         verticalStack.axis = .vertical
