@@ -149,7 +149,7 @@ internal class _AudioRecorderController: UIViewController, AVAudioRecorderDelega
     }
     
     private func configureNavigationBar() {
-        title = "Recorder Controller"
+        title = "Record Audio"
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelTapped))
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(saveTapped))
         navigationController?.navigationBar.barStyle = .black
