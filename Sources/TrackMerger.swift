@@ -21,7 +21,7 @@ internal class TrackMerger {
         case cancelled
     }
     
-    func merge(trackAt activeURL: URL, intoTrackAt masterURL: URL, writeTo outputURL: URL? = nil, deleteMergingTrack: Bool = true, completion: @escaping ((URL?, Error?) -> ())) {
+    func merge(trackAt activeURL: URL, intoTrackAt masterURL: URL, writeTo outputURL: URL? = nil, deleteMergingTrack: Bool = true, inputFileType: String = AVAssetExportPresetPassthrough, outputFileType: String = AVFileTypeMPEG4, completion: @escaping ((URL?, Error?) -> ())) {
         do {
             guard activeURL != masterURL else {
                 throw Error.urlsNotUnique
@@ -38,10 +38,10 @@ internal class TrackMerger {
             }
             try compositionTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, masterAsset.duration), of: masterTrack, at: kCMTimeZero)
             try compositionTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, activeAsset.duration), of: activeTrack, at: masterAsset.duration)
-            guard let exportSession = AVAssetExportSession(asset: composition, presetName: AVAssetExportPresetAppleM4A) else {
+            guard let exportSession = AVAssetExportSession(asset: composition, presetName: inputFileType) else {
                 throw Error.exportSessionError
             }
-            exportSession.outputFileType = AVFileTypeAppleM4A
+            exportSession.outputFileType = outputFileType
             if let outputURL = outputURL {
                 exportSession.outputURL = outputURL
             } else {
