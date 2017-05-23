@@ -17,6 +17,7 @@ public protocol AudioRecorderControllerDelegate: class {
 open class AudioRecorderController: UIViewController {
     
     open weak var delegate: AudioRecorderControllerDelegate?
+    open var outputFileType: String = AVFileTypeMPEG4
     
     fileprivate let _navigationController = UINavigationController()
     fileprivate let _controller = _AudioRecorderController()
@@ -166,7 +167,18 @@ internal class _AudioRecorderController: UIViewController, AVAudioRecorderDelega
     }
     
     private var newRecordingURL: URL {
-        let filename = "\(UUID().uuidString).m4a"
+        var fileExtension = ".mp4"
+        switch parentController.outputFileType {
+        case AVFileTypeMPEG4: fileExtension = ".mp4"
+        case AVFileTypeAppleM4A: fileExtension = ".m4a"
+        case AVFileTypeAC3: fileExtension = ".ac3"
+        case AVFileTypeAMR: fileExtension = ".amr"
+        case AVFileTypeAIFC: fileExtension = ".aifc"
+        case AVFileTypeAIFF: fileExtension = ".aiff"
+        case AVFileTypeMPEGLayer3: fileExtension = ".mp3"
+        default: break
+        }
+        let filename = "\(UUID().uuidString)\(fileExtension)"
         let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
         return URL(fileURLWithPath: documentsPath).appendingPathComponent(filename)
     }
@@ -340,7 +352,7 @@ internal class _AudioRecorderController: UIViewController, AVAudioRecorderDelega
         stopRecordingTimer()
         if audioRecorder.isRecording {
             audioRecorder.stop()
-            composer.merge(trackAt: audioRecorder.url, intoTrackAt: outputURL) {
+            composer.merge(trackAt: audioRecorder.url, intoTrackAt: outputURL, outputFileType: parentController.outputFileType) {
                 [unowned self] url, error in
                 if let error = error {
                     switch error {
