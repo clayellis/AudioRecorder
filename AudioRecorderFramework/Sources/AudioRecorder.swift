@@ -18,6 +18,8 @@ open class AudioRecorderController: UIViewController {
     
     open weak var delegate: AudioRecorderControllerDelegate?
     open var outputFileType: String = AVFileTypeMPEG4
+    open var allowsAudioPortSelection = true
+    open var defaultAudioPort: AudioPort = .default
     
     fileprivate let _navigationController = UINavigationController()
     fileprivate let _controller = _AudioRecorderController()
@@ -56,6 +58,11 @@ open class AudioRecorderController: UIViewController {
     
 }
 
+public enum AudioPort {
+    case `default`
+    case speaker
+}
+
 internal class _AudioRecorderController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
     
     private enum State {
@@ -67,12 +74,7 @@ internal class _AudioRecorderController: UIViewController, AVAudioRecorderDelega
         case saved
         case error(message: String)
     }
-    
-    private enum AudioPort {
-        case `default`
-        case speaker
-    }
-    
+
     // MARK: Members
     
     fileprivate weak var parentController: AudioRecorderController!
@@ -146,7 +148,8 @@ internal class _AudioRecorderController: UIViewController, AVAudioRecorderDelega
         configureAudioRecorder(with: outputURL)
         recordingTimestamp = 0
         playbackTimestamp = 0
-        audioPort = .default
+        audioPort = parentController.defaultAudioPort
+        contentView.portButton.isHidden = !parentController.allowsAudioPortSelection
     }
     
     private func configureNavigationBar() {
