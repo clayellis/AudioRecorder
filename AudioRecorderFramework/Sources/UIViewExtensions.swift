@@ -168,19 +168,19 @@ extension NSLayoutDimension {
     
     func constraint(equalTo anchor: NSLayoutDimension, priority p: Float) -> NSLayoutConstraint {
         let cst = constraint(equalTo: anchor)
-        cst.priority = p
+        cst.priority = UILayoutPriority(rawValue: p)
         return cst
     }
     
     func constraint(lessThanOrEqualTo anchor: NSLayoutDimension, priority p: Float) -> NSLayoutConstraint {
         let cst = constraint(lessThanOrEqualTo: anchor)
-        cst.priority = p
+        cst.priority = UILayoutPriority(rawValue: p)
         return cst
     }
     
     func constraint(greaterThanOrEqualTo anchor: NSLayoutDimension, priority p: Float) -> NSLayoutConstraint {
         let cst = constraint(greaterThanOrEqualTo: anchor)
-        cst.priority = p
+        cst.priority = UILayoutPriority(rawValue: p)
         return cst
     }
     
@@ -188,19 +188,19 @@ extension NSLayoutDimension {
     
     func constraint(equalToConstant c: CGFloat, priority p: Float) -> NSLayoutConstraint {
         let cst = constraint(equalToConstant: c)
-        cst.priority = p
+        cst.priority = UILayoutPriority(rawValue: p)
         return cst
     }
     
     func constraint(greaterThanOrEqualToConstant c: CGFloat, priority p: Float) -> NSLayoutConstraint {
         let cst = constraint(greaterThanOrEqualToConstant: c)
-        cst.priority = p
+        cst.priority = UILayoutPriority(rawValue: p)
         return cst
     }
     
     func constraint(lessThanOrEqualToConstant c: CGFloat, priority p: Float) -> NSLayoutConstraint {
         let cst = constraint(lessThanOrEqualToConstant: c)
-        cst.priority = p
+        cst.priority = UILayoutPriority(rawValue: p)
         return cst
     }
     
@@ -208,19 +208,19 @@ extension NSLayoutDimension {
     
     func constraint(equalTo anchor: NSLayoutDimension, constant c: CGFloat, priority p: Float) -> NSLayoutConstraint {
         let cst = constraint(equalTo: anchor, constant: c)
-        cst.priority = p
+        cst.priority = UILayoutPriority(rawValue: p)
         return cst
     }
     
     func constraint(lessThanOrEqualTo anchor: NSLayoutDimension, constant c: CGFloat, priority p: Float) -> NSLayoutConstraint {
         let cst = constraint(lessThanOrEqualTo: anchor, constant: c)
-        cst.priority = p
+        cst.priority = UILayoutPriority(rawValue: p)
         return cst
     }
     
     func constraint(greaterThanOrEqualTo anchor: NSLayoutDimension, constant c: CGFloat, priority p: Float) -> NSLayoutConstraint {
         let cst = constraint(greaterThanOrEqualTo: anchor, constant: c)
-        cst.priority = p
+        cst.priority = UILayoutPriority(rawValue: p)
         return cst
     }
     
@@ -228,19 +228,19 @@ extension NSLayoutDimension {
     
     func constraint(equalTo anchor: NSLayoutDimension, multiplier m: CGFloat, priority p: Float) -> NSLayoutConstraint {
         let cst = constraint(equalTo: anchor, multiplier: m)
-        cst.priority = p
+        cst.priority = UILayoutPriority(rawValue: p)
         return cst
     }
     
     func constraint(greaterThanOrEqualTo anchor: NSLayoutDimension, multiplier m: CGFloat, priority p: Float) -> NSLayoutConstraint {
         let cst = constraint(greaterThanOrEqualTo: anchor, multiplier: m)
-        cst.priority = p
+        cst.priority = UILayoutPriority(rawValue: p)
         return cst
     }
     
     func constraint(lessThanOrEqualTo anchor: NSLayoutDimension, multiplier m: CGFloat, priority p: Float) -> NSLayoutConstraint {
         let cst = constraint(lessThanOrEqualTo: anchor, multiplier: m)
-        cst.priority = p
+        cst.priority = UILayoutPriority(rawValue: p)
         return cst
     }
     
@@ -248,19 +248,19 @@ extension NSLayoutDimension {
     
     func constraint(equalTo anchor: NSLayoutDimension, multiplier m: CGFloat, constant c: CGFloat, priority p: Float) -> NSLayoutConstraint {
         let cst = constraint(equalTo: anchor, multiplier: m, constant: c)
-        cst.priority = p
+        cst.priority = UILayoutPriority(rawValue: p)
         return cst
     }
     
     func constraint(greaterThanOrEqualTo anchor: NSLayoutDimension, multiplier m: CGFloat, constant c: CGFloat, priority p: Float) -> NSLayoutConstraint {
         let cst = constraint(greaterThanOrEqualTo: anchor, multiplier: m, constant: c)
-        cst.priority = p
+        cst.priority = UILayoutPriority(rawValue: p)
         return cst
     }
     
     func constraint(lessThanOrEqualTo anchor: NSLayoutDimension, multiplier m: CGFloat, constant c: CGFloat, priority p: Float) -> NSLayoutConstraint {
         let cst = constraint(lessThanOrEqualTo: anchor, multiplier: m, constant: c)
-        cst.priority = p
+        cst.priority = UILayoutPriority(rawValue: p)
         return cst
     }
     
@@ -275,10 +275,10 @@ enum LayoutPriority {
     
     var floatValue: Float {
         switch self {
-        case .required: return UILayoutPriorityRequired
-        case .high: return UILayoutPriorityDefaultHigh
-        case .low: return UILayoutPriorityDefaultLow
-        case .fittingSizeLevel: return UILayoutPriorityFittingSizeLevel
+        case .required: return UILayoutPriority.required.rawValue
+        case .high: return UILayoutPriority.defaultHigh.rawValue
+        case .low: return UILayoutPriority.defaultLow.rawValue
+        case .fittingSizeLevel: return UILayoutPriority.fittingSizeLevel.rawValue
         case .custom(let priority): return priority
         }
     }

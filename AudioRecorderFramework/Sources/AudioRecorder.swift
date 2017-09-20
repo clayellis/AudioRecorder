@@ -17,7 +17,7 @@ public protocol AudioRecorderControllerDelegate: class {
 open class AudioRecorderController: UIViewController {
     
     open weak var delegate: AudioRecorderControllerDelegate?
-    open var outputFileType: String = AVFileTypeMPEG4
+    open var outputFileType: AVFileType = .mp4
     open var allowsAudioPortSelection = true
     open var defaultAudioPort: AudioPort = .default
     
@@ -172,13 +172,13 @@ internal class _AudioRecorderController: UIViewController, AVAudioRecorderDelega
     private var newRecordingURL: URL {
         var fileExtension = ".mp4"
         switch parentController.outputFileType {
-        case AVFileTypeMPEG4: fileExtension = ".mp4"
-        case AVFileTypeAppleM4A: fileExtension = ".m4a"
-        case AVFileTypeAC3: fileExtension = ".ac3"
-        case AVFileTypeAMR: fileExtension = ".amr"
-        case AVFileTypeAIFC: fileExtension = ".aifc"
-        case AVFileTypeAIFF: fileExtension = ".aiff"
-        case AVFileTypeMPEGLayer3: fileExtension = ".mp3"
+        case .mp4: fileExtension = ".mp4"
+        case .m4a: fileExtension = ".m4a"
+        case .ac3: fileExtension = ".ac3"
+        case .amr: fileExtension = ".amr"
+        case .aifc: fileExtension = ".aifc"
+        case .aiff: fileExtension = ".aiff"
+        case .mp3: fileExtension = ".mp3"
         default: break
         }
         let filename = "\(UUID().uuidString)\(fileExtension)"
@@ -613,7 +613,7 @@ fileprivate class _AudioRecorderView: UIView {
         timestampLabel.textAlignment = .center
         timestampLabel.textColor = .white
         
-        let timestampFont = UIFont.monospacedDigitSystemFont(ofSize: 45, weight: UIFontWeightUltraLight)
+        let timestampFont = UIFont.monospacedDigitSystemFont(ofSize: 45, weight: UIFont.Weight.ultraLight)
         timestampLabel.font = timestampFont
         
         func image(named name: String) -> UIImage? {

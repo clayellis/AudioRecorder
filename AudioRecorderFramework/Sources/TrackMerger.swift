@@ -21,23 +21,23 @@ internal class TrackMerger {
         case cancelled
     }
     
-    func merge(trackAt activeURL: URL, intoTrackAt masterURL: URL, writeTo outputURL: URL? = nil, deleteMergingTrack: Bool = true, inputFileType: String = AVAssetExportPresetPassthrough, outputFileType: String = AVFileTypeMPEG4, completion: @escaping ((URL?, Error?) -> ())) {
+    func merge(trackAt activeURL: URL, intoTrackAt masterURL: URL, writeTo outputURL: URL? = nil, deleteMergingTrack: Bool = true, inputFileType: String = AVAssetExportPresetPassthrough, outputFileType: AVFileType = .mp4, completion: @escaping ((URL?, Error?) -> ())) {
         do {
             guard activeURL != masterURL else {
                 throw Error.urlsNotUnique
             }
             let composition = AVMutableComposition()
-            let compositionTrack = composition.addMutableTrack(withMediaType: AVMediaTypeAudio, preferredTrackID: kCMPersistentTrackID_Invalid)
+            let compositionTrack = composition.addMutableTrack(withMediaType: AVMediaType.audio, preferredTrackID: kCMPersistentTrackID_Invalid)
             let masterAsset = AVURLAsset(url: masterURL)
             let activeAsset = AVURLAsset(url: activeURL)
-            guard let masterTrack = masterAsset.tracks(withMediaType: AVMediaTypeAudio).first else {
+            guard let masterTrack = masterAsset.tracks(withMediaType: AVMediaType.audio).first else {
                 throw Error.destinationTrackError
             }
-            guard let activeTrack = activeAsset.tracks(withMediaType: AVMediaTypeAudio).first else {
+            guard let activeTrack = activeAsset.tracks(withMediaType: AVMediaType.audio).first else {
                 throw Error.mergingTrackError
             }
-            try compositionTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, masterAsset.duration), of: masterTrack, at: kCMTimeZero)
-            try compositionTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, activeAsset.duration), of: activeTrack, at: masterAsset.duration)
+            try compositionTrack?.insertTimeRange(CMTimeRangeMake(kCMTimeZero, masterAsset.duration), of: masterTrack, at: kCMTimeZero)
+            try compositionTrack?.insertTimeRange(CMTimeRangeMake(kCMTimeZero, activeAsset.duration), of: activeTrack, at: masterAsset.duration)
             guard let exportSession = AVAssetExportSession(asset: composition, presetName: inputFileType) else {
                 throw Error.exportSessionError
             }
