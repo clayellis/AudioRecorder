@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         contentView.button.addTarget(self, action: #selector(buttonTapped(sender:)), for: .touchUpInside)
     }
     
-    func buttonTapped(sender: UIButton) {
+    @objc func buttonTapped(sender: UIButton) {
         let audioRecorder = AudioRecorderController()
         audioRecorder.delegate = self
         present(audioRecorder, animated: true, completion: nil)
@@ -31,14 +31,14 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: AudioRecorderControllerDelegate {
-    
+
     func audioRecorderControllerDidCancel(_ recorder: AudioRecorderController) {
         recorder.dismiss(animated: true, completion: nil)
     }
-    
+
     func audioRecorderController(_ recorder: AudioRecorderController, didFinishRecordingAudioWithURL audioURL: URL) {
         recorder.dismiss(animated: true, completion: nil)
         print(audioURL.path)
     }
-    
+
 }

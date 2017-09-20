@@ -13,9 +13,9 @@
 		6F90DC141ED72F4000AD2116 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F90DC101ED72F4000AD2116 /* AppDelegate.swift */; };
 		6F90DC151ED72F4000AD2116 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F90DC111ED72F4000AD2116 /* LaunchScreen.storyboard */; };
 		6F90DC171ED72F4000AD2116 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F90DC131ED72F4000AD2116 /* ViewController.swift */; };
-		6F90DC1B1ED730AF00AD2116 /* AudioRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F90DC1A1ED730AF00AD2116 /* AudioRecorder.framework */; };
-		6F90DC1C1ED730AF00AD2116 /* AudioRecorder.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6F90DC1A1ED730AF00AD2116 /* AudioRecorder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6F90DC261ED731BE00AD2116 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F90DC251ED731BE00AD2116 /* View.swift */; };
+		6F96E2BD1F72FA1B0090BB47 /* AudioRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F90DC1A1ED730AF00AD2116 /* AudioRecorder.framework */; };
+		6F96E2BE1F72FA1B0090BB47 /* AudioRecorder.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6F90DC1A1ED730AF00AD2116 /* AudioRecorder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,13 +36,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		6F90DC1D1ED730AF00AD2116 /* Embed Frameworks */ = {
+		6F96E2BF1F72FA1B0090BB47 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				6F90DC1C1ED730AF00AD2116 /* AudioRecorder.framework in Embed Frameworks */,
+				6F96E2BE1F72FA1B0090BB47 /* AudioRecorder.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F90DC1B1ED730AF00AD2116 /* AudioRecorder.framework in Frameworks */,
+				6F96E2BD1F72FA1B0090BB47 /* AudioRecorder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,7 +186,7 @@
 				6F90DBBE1ED72C4000AD2116 /* Sources */,
 				6F90DBBF1ED72C4000AD2116 /* Frameworks */,
 				6F90DBC01ED72C4000AD2116 /* Resources */,
-				6F90DC1D1ED730AF00AD2116 /* Embed Frameworks */,
+				6F96E2BF1F72FA1B0090BB47 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -246,18 +246,20 @@
 					6F90DBC11ED72C4000AD2116 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = JJ9HT28VE7;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					6F90DBD51ED72C4000AD2116 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = JJ9HT28VE7;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 6F90DBC11ED72C4000AD2116;
 					};
 					6F90DBE01ED72C4000AD2116 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = JJ9HT28VE7;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 6F90DBC11ED72C4000AD2116;
 					};
@@ -470,7 +472,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.clayellis.AudioRecorderExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -484,7 +487,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.clayellis.AudioRecorderExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -498,7 +502,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.clayellis.AudioRecorderExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AudioRecorderExample.app/AudioRecorderExample";
 			};
 			name = Debug;
@@ -513,7 +518,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.clayellis.AudioRecorderExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AudioRecorderExample.app/AudioRecorderExample";
 			};
 			name = Release;
@@ -527,7 +533,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.clayellis.AudioRecorderExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = AudioRecorderExample;
 			};
 			name = Debug;
@@ -541,7 +548,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.clayellis.AudioRecorderExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = AudioRecorderExample;
 			};
 			name = Release;
